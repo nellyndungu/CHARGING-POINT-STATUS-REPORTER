@@ -1,0 +1,128 @@
+menu "Charger Reporter Configuration"
+
+    menu "Device Settings"
+
+        config DEVICE_ID
+            string "Device ID"
+            default "charger001"
+            help
+                Unique identifier for this charger node.
+                Used in MQTT topic generation and JSON payloads.
+
+    endmenu
+
+
+    menu "Wi-Fi Settings"
+
+        config WIFI_SSID
+            string "Wi-Fi SSID"
+            default "YourWiFiSSID"
+            help
+                SSID of the Wi-Fi network to connect to.
+
+        config WIFI_PASSWORD
+            string "Wi-Fi Password"
+            default "YourWiFiPassword"
+            help
+                Password for the Wi-Fi network.
+
+    endmenu
+
+
+    menu "MQTT Settings"
+
+        config MQTT_BROKER_URL
+            string "MQTT Broker URL"
+            default "mqtt://broker.hivemq.com"
+            help
+                Full MQTT broker URI, e.g. mqtt://broker.hivemq.com
+
+        config MQTT_TOPIC_STATUS
+            string "MQTT Status Topic Format"
+            default "chaji/charger/%s/status"
+            help
+                MQTT topic used for publishing charger status.
+                %s will be replaced with CONFIG_DEVICE_ID.
+
+        config MQTT_TOPIC_CMD
+            string "MQTT Command Topic Format"
+            default "chaji/charger/%s/cmd"
+            help
+                MQTT topic used for receiving remote commands.
+                %s will be replaced with CONFIG_DEVICE_ID.
+
+        config MQTT_TOPIC_LWT
+            string "MQTT Last Will Topic Format"
+            default "chaji/charger/%s/lwt"
+            help
+                MQTT topic used for Last Will and Testament messages.
+                %s will be replaced with CONFIG_DEVICE_ID.
+        config MQTT_TOPIC_CONFIG
+        	string "MQTT Wi-Fi Config Topic Format"
+    		default "chaji/charger/%s/config"
+   			help
+        		MQTT topic used for receiving runtime Wi-Fi configuration updates.
+        		%s will be replaced with CONFIG_DEVICE_ID. 
+
+    endmenu
+
+
+    menu "Simulation Settings"
+
+        config PUBLISH_INTERVAL_MS
+            int "Publish Interval (ms)"
+            default 5000
+            range 1000 60000
+            help
+                Interval between status updates and MQTT publishes.
+
+        config VOLTAGE_MIN
+            int "Minimum Simulated Voltage (V)"
+            default 220
+            range 180 260
+            help
+                Lower acceptable voltage threshold before FAULT is triggered.
+
+        config VOLTAGE_MAX
+            int "Maximum Simulated Voltage (V)"
+            default 240
+            range 180 260
+            help
+                Upper acceptable voltage threshold before FAULT is triggered.
+
+        config CURRENT_MAX
+            int "Maximum Simulated Charging Current (A)"
+            default 16
+            range 1 64
+            help
+                Maximum simulated current during charging state.
+
+    endmenu
+
+
+    menu "Hardware Settings"
+
+        config LED_RED_GPIO
+            int "Red LED GPIO"
+            default 19
+            range 0 48
+            help
+                GPIO pin used for the red LED channel.
+
+        config LED_GREEN_GPIO
+            int "Green LED GPIO"
+            default 18
+            range 0 48
+            help
+                GPIO pin used for the green LED channel.
+
+        config LED_BLUE_GPIO
+            int "Blue LED GPIO"
+            default 17
+            range 0 48
+            help
+                GPIO pin used for the blue LED channel.
+
+    endmenu
+
+endmenu
