@@ -43,7 +43,7 @@ signal routes have `10 mil` and other with `15 mil`.
 <img width="657" height="458" alt="BOTTOM PCB" src="https://github.com/user-attachments/assets/5b1ea3e2-1ea6-47a7-8dd6-d33737411602" />
 
 
-#### 3D Design
+#### 3D View
 <img width="2160" height="1890" alt="CHARGE POINT 3D PCB" src="https://github.com/user-attachments/assets/667e2b51-f41c-47d0-9702-8bb7f97bb2f2" />
 
 
