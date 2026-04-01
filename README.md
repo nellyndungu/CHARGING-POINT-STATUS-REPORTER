@@ -29,18 +29,23 @@ to each LED leg of the RGB as well as to the Gate terminal of the mosfets. The `
 - The IRLZ44N has Drain-to-Source On-Resistance of `22 mΩ` resulting to low power dissipation hence low heat produced and requires no heat sink.
 
 ### Circuit Schematic
-![CHARGING_POINT_STATUS_REPORTER](https://github.com/user-attachments/assets/f35aea69-c02b-46ff-bc64-c72c3edb4398)
+![CHARGING_POINT_STATUS_REPORTER](https://github.com/user-attachments/assets/e7520c73-e61d-475b-83f0-65ceb3a2af75)
+
+
 ### PCB Design
 The PCB is two-layered PCB with ground copper pour on both top and bottom layers. The PCB tracks are of different widths where power and ground routes have `30 mil` width, 
 signal routes have `10 mil` and other with `15 mil`.
 #### Top Layer
-<img width="546" height="383" alt="TOP PCB" src="https://github.com/user-attachments/assets/ca031452-c77e-480d-bbe4-ae1c7d326c44" />
+<img width="546" height="383" alt="TOP PCB" src="https://github.com/user-attachments/assets/c01626e1-6457-4a35-999b-d376635c6f1a" />
+
 
 #### Bottom Layer
-<img width="546" height="383" alt="BOTTOM PCB" src="https://github.com/user-attachments/assets/01a41174-b2bc-43f8-a5e6-0ab4c100344b" />
+<img width="657" height="458" alt="BOTTOM PCB" src="https://github.com/user-attachments/assets/5b1ea3e2-1ea6-47a7-8dd6-d33737411602" />
+
 
 #### 3D Design
-<img width="2160" height="1890" alt="CHARGE POINT 3D PCB" src="https://github.com/user-attachments/assets/3f84734c-2409-4ee7-8cf8-cca444678e31" />
+<img width="2160" height="1890" alt="CHARGE POINT 3D PCB" src="https://github.com/user-attachments/assets/667e2b51-f41c-47d0-9702-8bb7f97bb2f2" />
+
 
 ## Firmware
 The firmware is designed to perform the following tasks:
